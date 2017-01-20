@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+
+ * @category   Question 
+ * @package    Remerce_productquestion
+ */
+-->
+<config>
+	<modules>
+		<Remerce_ProductQuestion>
+			<version>0.2.0</version>
+		</Remerce_ProductQuestion>
+	</modules>
+ <frontend>
+        <routers>
+            <productquestion>
+                <use>standard</use>
+                <args>
+                    <module>Remerce_ProductQuestion</module>
+                    <frontName>productquestion</frontName>
+                </args>
+            </productquestion>
+        </routers>
+        <translate>
+            <modules>
+                <Remerce_ProductQuestion>
+                    <files>
+                        <default>Remerce_ProductQuestion.csv</default>
+                    </files>
+                </Remerce_ProductQuestion>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <productquestion>
+                    <file>productquestion.xml</file>
+                </productquestion>
+            </updates>
+        </layout>
+    </frontend>
+
+	<global>
+	    <resources>
+            <productquestion_setup>
+                <setup>
+                    <module>Remerce_ProductQuestion</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </productquestion_setup>
+        </resources>
+		<models>
+			<productquestion>
+				<class>Remerce_ProductQuestion_Model</class>
+			</productquestion>	
+		</models>
+		<blocks>  
+			<productquestion>  
+				<class>Question_ProductQuestion_Block</class>  
+			</productquestion>  
+		</blocks>
+		<helpers>  
+			<productquestion>  
+				<class>Remerce_ProductQuestion_Helper</class>  
+			</productquestion>  
+		</helpers> 
+		<template>
+            <email>
+                <productquestion_email_email_template translate="label" module="productquestion">
+                    <label>ProductQuestion Form</label>
+                    <file>productquestion_form.html</file>
+                    <type>text</type>
+                </productquestion_email_email_template>
+            </email>
+        </template>
+	</global>
+	 <adminhtml>
+		<translate>
+            <modules>
+                <Remerce_ProductQuestion>
+                     <files>
+                          <default>Remerce_ProductQuestion.csv</default>
+                     </files>
+                </Remerce_ProductQuestion>
+            </modules>
+        </translate>	
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <productquestion>
+                                            <title>Productquestion Section</title>
+                                        </productquestion>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+	<default>
+        <productquestion>
+            <productquestion>
+                <enabled>1</enabled>
+            </productquestion>
+            <email>
+                <recipient_email><![CDATA[hello@example.com]]></recipient_email>
+                <sender_email_identity>custom2</sender_email_identity>
+                <email_template>productquestion_email_email_template</email_template>
+            </email>
+        </productquestion>
+    </default>
+</config>

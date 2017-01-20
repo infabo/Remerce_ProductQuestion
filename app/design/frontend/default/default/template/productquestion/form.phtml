@@ -1,0 +1,80 @@
+<?php
+/**
+ * Remerce
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   design_default
+ * @package    Remerce_ProductQuestion
+ * @copyright  Copyright (c) 2009 Remerce (http://remerce.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ ?>
+ <?php $productId = (int) $this->getRequest()->getParam('product');
+        if (!$productId) {
+            $this->_redirect('*/');
+            return;
+        }
+        $product = Mage::getModel('catalog/product')->load($productId);
+		$product->getProductUrl();
+		$product->getSku();
+		$referrer = $_SERVER['HTTP_REFERER'];
+
+?>
+
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<div class="page-head">
+    <h3><?php echo Mage::helper('productquestion')->__('Question about:')." ".$product->getName();?></h3>
+</div>
+
+<form action="<?php echo $this->getFormAction(); ?>" id="productquestionForm" method="post">
+<input type="hidden" name="reference_url" id="reference_url" value="<?php echo $referrer ?>" />
+    <fieldset class="group-select">
+        <h4 class="legend"><?php echo Mage::helper('productquestion')->__('Ask Question') ?></h4>
+        <ul>
+        <li>
+                <div class="input-box">
+                    <label for="name"><?php echo Mage::helper('productquestion')->__('Name') ?> <span class="required">*</span></label><br />
+                    <input name="name" id="name" title="<?php echo $this->__('Name') ?>" value="<?php echo $this->htmlEscape($this->helper('productquestion')->getUserName()) ?>" class="required-entry input-text" type="text" />
+                </div>
+
+                <div class="input-box">
+                    <label for="email"><?php echo Mage::helper('productquestion')->__('Email') ?> <span class="required">*</span></label><br />
+                    <input name="email" id="email" title="<?php echo $this->__('Email') ?>" value="<?php echo $this->htmlEscape($this->helper('productquestion')->getUserEmail()) ?>" class="required-entry input-text validate-email" type="text" />
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="input-box">
+                    <label for="telephone"><?php echo Mage::helper('productquestion')->__('Telephone') ?></label><br />
+                    <input name="telephone" id="telephone" title="<?php echo $this->__('Telephone') ?>" value="" class="input-text" type="text" />
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="input-box">
+                    <label for="comment"><?php echo Mage::helper('productquestion')->__('Ask your question') ?> <span class="required">*</span></label><br />
+                    <textarea name="comment" id="comment" title="<?php echo $this->__('Question') ?>" class="required-entry input-text" style="height:150px;width:525px;" cols="50" rows="5"></textarea>
+                </div>
+               </li>
+                </ul>
+    </fieldset>
+    <div class="button-set">
+        <p class="required"><?php echo Mage::helper('productquestion')->__('* Required Fields') ?></p>
+        <button class="form-button" type="submit"><span><?php echo Mage::helper('productquestion')->__('Submit') ?></span></button>
+    </div>
+    <input type="hidden" name="product" value="<?php echo $productId ?>">
+    <input type="hidden" name="productname" value="<?php echo $product->getName() ?>">
+	<input type="hidden" name="productsku" value="<?php echo $product->getSku() ?>">
+</form>
+<script type="text/javascript">
+    var contactForm = new VarienForm('productquestionForm', true);
+</script>
