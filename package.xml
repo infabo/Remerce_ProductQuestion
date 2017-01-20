@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Remerce_ProductQuestion</name>
+    <version>1.1.1</version>
+    <stability>stable</stability>
+    <license uri="http://www.opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>This module enable the option to ask a question about a product. The module is based on the default Contact Us form.</summary>
+    <description>This module enable the option to ask a question about a product. The module is based on the default Contact Us form.</description>
+    <notes>This module enable the option to ask a question about a product. The module is based on the default Contact Us form.</notes>
+    <authors><author><name>Joachim</name><user>auto-converted</user><email>joachim@remerce.com</email></author></authors>
+    <date>2009-04-04</date>
+    <time>19:27:40</time>
+    <contents><target name="magelocale"><dir name="de_DE"><file name="Remerce_ProductQuestion.csv" hash="7278c2baf75c8e591050057bc8fc110a"/></dir><dir name="en_US"><dir name="template"><dir name="email"><file name="productquestion_form.html" hash="0522e303f0ef344ab4e895b2cff6cdad"/></dir></dir><file name="Remerce_ProductQuestion.csv" hash="db40d8548b3f4e6bc2fb0a91eb87d7bc"/></dir><dir name="fr_FR"><file name="Remerce_ProductQuestion.csv" hash="051166b12d0d4bc9d3496eafcf528a0a"/></dir><dir name="it_IT"><file name="Remerce_ProductQuestion.csv" hash="3680bc5d479ca6a5842f6f94ce908914"/></dir><dir name="nl_NL"><dir name="template"><dir name="email"><file name="productquestion_form.html" hash="501ce4b2f4a8904fa4a6dc6bd6fe91eb"/></dir></dir><file name="Remerce_ProductQuestion.csv" hash="a8639eb074b08d3ad56cac21ce0ba6d4"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="productquestion.xml" hash="92c9ec7c5b7477274cb5e5af2b5e46b9"/></dir><dir name="template"><dir name="productquestion"><file name="form.phtml" hash="389a8ea497d631a7857e6ececbd54e52"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Remerce_ProductQuestion.xml" hash="c66644442573f066756443b7d8380e12"/></dir></target><target name="magecommunity"><dir name="Remerce"><dir name="ProductQuestion"><dir name="Block"><file name="View.php" hash="bc6d2bb389c469112befa688b403ae91"/></dir><dir name="controllers"><file name="IndexController.php" hash="c22641ae453120bbd891248041c3942b"/></dir><dir name="etc"><file name="config.xml" hash="3a24be0068ed1c9fc9b582d4242f4d00"/><file name="system.xml" hash="74e4830c7d2c48b4e39da24bbfd2c2ad"/></dir><dir name="Helper"><file name="Data.php" hash="d2b28fe1ae5041c1e928a02d9c60f20e"/></dir><dir name="Model"><file name="productquestion.php" hash="dd09601cd5c16895bd7eea66694e7119"/><file name="Session.php" hash="ffd765f8949ca2f1d75f44f8f4689d0e"/></dir><dir name="sql"><dir name="productquestion_setup"><file name="mysql4-install-0.1.0.php" hash="5c44cd0b0c919db6f020cf869975b669"/><file name="mysql4-install-0.2.0.php" hash="5c44cd0b0c919db6f020cf869975b669"/><file name="mysql4-upgrade-0.1.0-0.2.0" hash="268240cdb33d6e974b22ef83e034a936"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies/>
+</package>

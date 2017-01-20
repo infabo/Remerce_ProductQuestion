@@ -1,0 +1,64 @@
+{
+  "name":"all9lives/Remerce_ProductQuestion",
+  "type":"magento-module",
+  "license":"OSL-3.0",
+  "homepage":"https://github.com/all9lives/Remerce_ProductQuestion",
+  "description":"This module enable the option to ask a question about a product. The module is based on the default Contact Us form.",
+  "authors":[
+    {
+      "name":"Joachim",
+      "email":"joachim@remerce.com"
+    }
+  ],
+  "require":{
+    "magento-hackathon/magento-composer-installer":"*"
+  },
+  "extra": {
+        "map": [
+            [
+                "app/code/community/Remerce/ProductQuestion/",
+                "app/code/community/Remerce/ProductQuestion/"
+            ],
+            [
+                "app/design/frontend/default/default/layout/productquestion.xml",
+                "app/design/frontend/default/default/layout/productquestion.xml"
+            ],
+            [
+                "app/design/frontend/default/default/template/productquestion/",
+                "app/design/frontend/default/default/template/productquestion/"
+            ],
+            [
+                "app/etc/modules/Remerce_ProductQuestion.xml",
+                "app/etc/modules/Remerce_ProductQuestion.xml"
+            ],
+            [
+                "app/locale/de_DE/Remerce_ProductQuestion.csv",
+                "app/locale/de_DE/Remerce_ProductQuestion.csv"
+            ],
+            [
+                "app/locale/en_US/Remerce_ProductQuestion.csv",
+                "app/locale/en_US/Remerce_ProductQuestion.csv"
+            ],
+            [
+                "app/locale/en_US/template/email/productquestion_form.html",
+                "app/locale/en_US/template/email/productquestion_form.html"
+            ],
+            [
+                "app/locale/fr_FR/Remerce_ProductQuestion.csv",
+                "app/locale/fr_FR/Remerce_ProductQuestion.csv"
+            ],
+            [
+                "app/locale/it_IT/Remerce_ProductQuestion.csv",
+                "app/locale/it_IT/Remerce_ProductQuestion.csv"
+            ],
+            [
+                "app/locale/nl_NL/Remerce_ProductQuestion.csv",
+                "app/locale/nl_NL/Remerce_ProductQuestion.csv"
+            ],
+            [
+                "app/locale/nl_NL/template/email/productquestion_form.html",
+                "app/locale/nl_NL/template/email/productquestion_form.html"
+            ]
+        ]
+    }
+}
